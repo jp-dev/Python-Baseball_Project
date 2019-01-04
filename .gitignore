@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 # Created by .ignore support plugin (hsz.mobi)
 /Python-Baseball_Project.iml
 /.idea/
 /__pycache__/
+<<<<<<< HEAD
 
+=======
+=======
+.idea
+*.iml
+*.xml
+>>>>>>> 3fe1adaa936182f7309b9f14cb3c8e92cb9251af
+>>>>>>> upstream-master

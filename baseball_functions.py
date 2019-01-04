@@ -1,4 +1,10 @@
-# Function to advance base runners based on hit passed from __main__
+# Functions for baseball project:
+# - advance base runners based on hit passed from __main__
+# - print score box
+# - generate batting order
+# - generate pitch result
+
+import random
 
 
 def advance_runner(hit_f, base1_f, base2_f, base3_f, home_plate_f):
@@ -37,6 +43,7 @@ def print_scorebox(home_list, visitors_list):
     # print("TEST TEST TEST")
     # print("Home Team List Score: {}".format(home_list[0]))
     # print("Home Team List Score: {}".format(home_list[3]))
+    # <<<<<<< HEAD
     print(
         "INNING  ",
         "\t 1",
@@ -100,3 +107,33 @@ def print_scorebox(home_list, visitors_list):
             99,
         )
     )
+
+
+def batting_order():
+    batting_lineup = []
+
+    while len(batting_lineup) < 9:
+        next_batter = random.randint(0, 8)
+        if next_batter in batting_lineup:
+            continue
+        else:
+            batting_lineup.append(next_batter)
+
+    # print("batting order: {}".format(batting_lineup))
+    return batting_lineup
+
+
+def pitch_result():
+    pitch_result_tuple = (
+        ("strike", 10),
+        ("ball", 11),
+        ("foul ball", 12),
+        ("foul out", 13),
+        ("out - defense", 14),
+        ("hit - single", 1),
+        ("hit - double", 2),
+        ("hit - triple", 3),
+        ("hit - homerun", 4),
+    )
+    pitch_result_return = random.randint(0, 8)
+    return pitch_result_tuple[pitch_result_return]
