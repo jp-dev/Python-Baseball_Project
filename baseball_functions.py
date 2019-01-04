@@ -12,7 +12,7 @@ def advance_runner(hit_f, base1_f, base2_f, base3_f, home_plate_f):
     print(hit_f, base1_f, base2_f, base3_f, home_plate_f)
 
     batter = 1  # Initialize batter to put batter on base if someone already on first
-    print("batter: {}".format(batter))
+    print(f"batter: {batter}")
 
     while hit_f:
         if base3_f == 1:
@@ -33,9 +33,9 @@ def advance_runner(hit_f, base1_f, base2_f, base3_f, home_plate_f):
 
         hit_f -= 1
         print("after 1 loop:\t", hit_f, base1_f, base2_f, base3_f, home_plate_f)
-        print("batter: {}".format(batter))
+        print(f"batter: {batter}")
     print("function returns:", hit_f, base1_f, base2_f, base3_f, home_plate_f)
-    print("batter: {}".format(batter))
+    print(f"batter: {batter}")
     return hit_f, base1_f, base2_f, base3_f, home_plate_f
 
 
