@@ -8,8 +8,17 @@ hit_g = base1_g = base2_g = base3_g = home_plate_g = 0
 
 # Player positions stored in a tuple
 
-players_tuple = ("pitcher", "catcher", "first baseman", "second baseman", "third baseman", "shortstop", "left fielder"
-                 , "center fielder", "right fielder")
+players_tuple = (
+    "pitcher",
+    "catcher",
+    "first baseman",
+    "second baseman",
+    "third baseman",
+    "shortstop",
+    "left fielder",
+    "center fielder",
+    "right fielder",
+)
 
 # Innings
 
@@ -27,8 +36,17 @@ innings_name = [
 
 # Pitch Result tuple
 
-pitch_result_tuple = (('strike', 10), ('ball', 11), ('foul ball', 12), ('foul out', 13), ('out - defense', 14)
-                      , ('hit - single', 1), ('hit - double', 2), ('hit - triple', 3), ('hit - homerun', 4))
+pitch_result_tuple = (
+    ("strike", 10),
+    ("ball", 11),
+    ("foul ball", 12),
+    ("foul out", 13),
+    ("out - defense", 14),
+    ("hit - single", 1),
+    ("hit - double", 2),
+    ("hit - triple", 3),
+    ("hit - homerun", 4),
+)
 
 # Innings tracker list by list comprehension
 
