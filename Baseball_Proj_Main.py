@@ -8,6 +8,11 @@ import baseball_functions
 
 hit_g = base1_g = base2_g = base3_g = home_plate_g = 0
 
+# Player positions stored in a tuple
+
+players_tuple = ("pitcher", "catcher", "first base", "second base", "third base", "shortstop", "left field"
+                 , "center field", "right field")
+
 # Innings
 
 innings_name = [
@@ -22,8 +27,15 @@ innings_name = [
     "9th Inning",
 ]
 
+# Pitch Result tuple
+
+pitch_result_tuple = (('strike', 10), ('ball', 11), ('foul ball', 12), ('foul out', 13), ('out - defense', 14)
+                      , ('hit - single', 1), ('hit - double', 2), ('hit - triple', 3), ('hit - homerun', 4))
+
+# Innings tracker list by list comprehension
+
 innings_tracker = [x for x in range(0, 9)]
-print(innings_tracker)
+# print(innings_tracker)
 
 # Home team & Visitors score tracking
 
@@ -37,11 +49,30 @@ visitors_list = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 print()
 print("*** MAIN SECTION ***")
 print("+" * 80)
+
+print()
+print("=" * 70)
+print()
+
+# Set up batting order
+print("Set up batting order")
+
+visitors_batting_lineup = baseball_functions.batting_order()
+hometeam_batting_lineup = baseball_functions.batting_order()
+
+print("vistors batting order: {}".format(visitors_batting_lineup))
+print("home team batting order: {}".format(hometeam_batting_lineup))
+
+
+print()
+print("=" * 70)
+print()
+
+print("+" * 80)
 print("Check innings:")
 
 for game_inning in innings_tracker:
     print("-" * 50)
-    print()
     home_team_list[game_inning] = game_inning
     visitors_list[game_inning] = game_inning
     print(innings_name[game_inning])
@@ -218,7 +249,10 @@ print()
 # hit_g, base1_g, base2_g, base3_g, home_plate_g = 0
 # advance_runner(hit_f, base1_f, base2_f, base3_f, home_plate_f):
 
+<<<<<<< HEAD:Baseball_Proj_Main.py
 
+=======
+>>>>>>> 3fe1adaa936182f7309b9f14cb3c8e92cb9251af:Baseball_Proj_Main
 print("*" * 30)
 print()
 

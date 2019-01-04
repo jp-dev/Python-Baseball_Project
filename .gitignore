@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 # Created by .ignore support plugin (hsz.mobi)
 /Python-Baseball_Project.iml
 /.idea/
+=======
+.idea
+*.iml
+*.xml
+>>>>>>> 3fe1adaa936182f7309b9f14cb3c8e92cb9251af
