@@ -58,8 +58,8 @@ print("Set up batting order")
 visitors_batting_lineup = bf.batting_order()
 hometeam_batting_lineup = bf.batting_order()
 
-print(f"visitors batting order: {visitors_batting_lineup}")
-print(f"home team batting order: {hometeam_batting_lineup}")
+print(f"Visitors batting order: {visitors_batting_lineup}")
+print(f"Home team batting order: {hometeam_batting_lineup}")
 
 
 print()
