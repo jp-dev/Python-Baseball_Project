@@ -118,8 +118,7 @@ def print_scorebox(home_list, visitors_list):
 #     print("VISITORS: \t{:>2} \t{:>2} \t{:>2} \t{:>2} \t{:>2} \t{:>2} \t{:>2} \t{:>2} \t{:>2} \t{:>2} \t{:>2} \t{:>2}"
 #           .format(visitors_list[0], visitors_list[1], visitors_list[2], visitors_list[3], visitors_list[4]
 #                   , visitors_list[5], visitors_list[6], visitors_list[7], visitors_list[8], sum(visitors_list), 99, 99))
-    
-    
+
 def batting_order():
     batting_lineup = []
 

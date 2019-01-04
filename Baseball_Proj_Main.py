@@ -1,6 +1,4 @@
-import baseball_functions
-
-# Small demo change for format-changes branch
+import baseball_functions as bf
 
 # Variables & Data structures
 
@@ -10,8 +8,8 @@ hit_g = base1_g = base2_g = base3_g = home_plate_g = 0
 
 # Player positions stored in a tuple
 
-players_tuple = ("pitcher", "catcher", "first base", "second base", "third base", "shortstop", "left field"
-                 , "center field", "right field")
+players_tuple = ("pitcher", "catcher", "first baseman", "second baseman", "third baseman", "shortstop", "left fielder"
+                 , "center fielder", "right fielder")
 
 # Innings
 
@@ -57,11 +55,11 @@ print()
 # Set up batting order
 print("Set up batting order")
 
-visitors_batting_lineup = baseball_functions.batting_order()
-hometeam_batting_lineup = baseball_functions.batting_order()
+visitors_batting_lineup = bf.batting_order()
+hometeam_batting_lineup = bf.batting_order()
 
-print("vistors batting order: {}".format(visitors_batting_lineup))
-print("home team batting order: {}".format(hometeam_batting_lineup))
+print(f"visitors batting order: {visitors_batting_lineup}")
+print(f"home team batting order: {hometeam_batting_lineup}")
 
 
 print()
@@ -76,7 +74,7 @@ for game_inning in innings_tracker:
     home_team_list[game_inning] = game_inning
     visitors_list[game_inning] = game_inning
     print(innings_name[game_inning])
-    baseball_functions.print_scorebox(home_team_list, visitors_list)
+    bf.print_scorebox(home_team_list, visitors_list)
     print("-" * 50)
     print()
 
@@ -94,7 +92,7 @@ visitors_list[2] = 10
 visitors_list[6] = 2
 
 print("Scorebox test:")
-baseball_functions.print_scorebox(home_team_list, visitors_list)
+bf.print_scorebox(home_team_list, visitors_list)
 
 print()
 # ***** MAIN SECTION *****
