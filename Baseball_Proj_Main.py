@@ -249,10 +249,7 @@ print()
 # hit_g, base1_g, base2_g, base3_g, home_plate_g = 0
 # advance_runner(hit_f, base1_f, base2_f, base3_f, home_plate_f):
 
-<<<<<<< HEAD:Baseball_Proj_Main.py
 
-=======
->>>>>>> 3fe1adaa936182f7309b9f14cb3c8e92cb9251af:Baseball_Proj_Main
 print("*" * 30)
 print()
 

@@ -2,6 +2,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 /Python-Baseball_Project.iml
 /.idea/
+/__pycache__/
 =======
 .idea
 *.iml
