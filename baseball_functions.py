@@ -5,7 +5,7 @@
 # - generate pitch result
 
 import random
-
+import time
 
 def advance_runner(hit_f, base1_f, base2_f, base3_f, home_plate_f):
     print("before advance:")
@@ -140,15 +140,17 @@ def pitch_result():
 
 
 class TeamAtBat:
-    def __init__(self):
+    def __init__(self, team):
         self.runs = 0
         self.outs = 0
         self.walks = 0
+        self.team = team
 
     def team_at_bat(self):
         while self.outs < 3:
             self.player_at_bat()
-        print(f"Runs for this at bat: {self.runs}")
+        print(f"Runs for this at bat: {self.runs}\n")
+        return self.runs
 
     def player_at_bat(self):
         strikes = 0
@@ -198,11 +200,34 @@ class TeamAtBat:
                 else:
                     print(f"Throw is {pitcher_throw} - Swing is {batter_swing}  :  Ball {balls}\n")
 
-        print('=' * 50)
+        print('=' * 25)
         print('\n\n')
+        # time.sleep(2)
 
 
-myatbat = TeamAtBat()
+class Inning(TeamAtBat):
+    def __init__(self):
+        self.visiting_team_runs = 0
+        self.home_team_runs = 0
 
-myatbat.team_at_bat()
+    visitors_atbat = TeamAtBat(team='Visitors')
+    home_atbat = TeamAtBat(team='Hometeam')
 
+
+inning_list = [Inning() for i in range(9)]
+
+print(inning_list, '\n')
+
+for i in inning_list:
+    inning = Inning()
+    inning_list.append(inning)
+
+for index, inning in enumerate(inning_list):
+    print("=" * 75)
+    print('\n')
+    print(f"Inning {inning}")
+    visitor_runs = inning_list[inning].visitors_atbat.team_at_bat()
+    hometeam_runs = inning_list[inning].home_atbat.team_at_bat()
+
+    print(f"Visitor runs for inning {inning}: {visitor_runs}")
+    print(f"Home Team runs for inning {inning}: {hometeam_runs}")
