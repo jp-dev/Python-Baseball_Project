@@ -137,3 +137,28 @@ def pitch_result():
     )
     pitch_result_return = random.randint(0, 8)
     return pitch_result_tuple[pitch_result_return]
+
+
+def at_bat():
+    strikes = 0
+    balls = 0
+
+    while strikes < 3 and balls < 4:
+        batter_swing = random.randint(0, 10)
+        pitcher_throw = random.randint(0, 10)
+
+        if pitcher_throw == batter_swing:
+            # Batter hit the ball
+            print(f"Throw is {pitcher_throw} - Swing is {batter_swing}")
+            print(f"Batter hit the ball!")
+            break
+        elif pitcher_throw > batter_swing:
+            # Pitch is a strike
+            print(f"Throw is {pitcher_throw} - Swing is {batter_swing}")
+            print(f"Strike {strikes + 1}!")
+            strikes += 1
+        else:
+            # Pitch is a ball
+            print(f"Throw is {pitcher_throw} - Swing is {batter_swing}")
+            print(f"Ball {balls + 1}!")
+            balls += 1
