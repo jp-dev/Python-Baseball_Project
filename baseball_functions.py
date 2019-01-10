@@ -215,14 +215,12 @@ class Inning(TeamAtBat):
     visitors_atbat = TeamAtBat(team='Visitors', inning_num=0)
     home_atbat = TeamAtBat(team='Hometeam', inning_num=0)
 
+
 # Create a total of nine Inning() instances
 inning_list = [Inning() for i in range(9)]
 
 print(inning_list, '\n')
 
-# for i in inning_list:
-#     inning = Inning()
-#     inning_list.append(inning)
 
 for index, inning in enumerate(inning_list):
     visitor_runs = 0
@@ -230,8 +228,8 @@ for index, inning in enumerate(inning_list):
     print("=" * 100)
     print(f"{index + 1} " * 50)
     print("=" * 100)
-    print(f"Visitor runs for inning {index + 1}: {visitor_runs}")
-    print(f"Home Team runs for inning {index + 1}: {hometeam_runs}")
+    print(f"Visitor runs for inning {inning}: {visitor_runs}")
+    print(f"Home Team runs for inning {inning}: {hometeam_runs}")
     print('\n')
     print(f"Inning {index + 1}")
     visitor_runs = inning.visitors_atbat.team_at_bat()
