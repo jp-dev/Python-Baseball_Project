@@ -140,16 +140,18 @@ def pitch_result():
 
 
 class TeamAtBat:
-    def __init__(self, team):
+    def __init__(self, team, inning_num):
         self.runs = 0
         self.outs = 0
         self.walks = 0
         self.team = team
+        self.inning_num = inning_num
 
     def team_at_bat(self):
         while self.outs < 3:
             self.player_at_bat()
-        print(f"Runs for this at bat: {self.runs}\n")
+        print(f"Runs for this at bat: {self.runs}\n\n\n")
+        self.outs = 0  # Reset outs to zero after at bat
         return self.runs
 
     def player_at_bat(self):
@@ -200,7 +202,7 @@ class TeamAtBat:
                 else:
                     print(f"Throw is {pitcher_throw} - Swing is {batter_swing}  :  Ball {balls}\n")
 
-        print('=' * 25)
+        print('=' * 50)
         print('\n\n')
         # time.sleep(2)
 
@@ -210,24 +212,32 @@ class Inning(TeamAtBat):
         self.visiting_team_runs = 0
         self.home_team_runs = 0
 
-    visitors_atbat = TeamAtBat(team='Visitors')
-    home_atbat = TeamAtBat(team='Hometeam')
+    visitors_atbat = TeamAtBat(team='Visitors', inning_num=0)
+    home_atbat = TeamAtBat(team='Hometeam', inning_num=0)
 
-
+# Create a total of nine Inning() instances
 inning_list = [Inning() for i in range(9)]
 
 print(inning_list, '\n')
 
-for i in inning_list:
-    inning = Inning()
-    inning_list.append(inning)
+# for i in inning_list:
+#     inning = Inning()
+#     inning_list.append(inning)
 
 for index, inning in enumerate(inning_list):
-    print("=" * 75)
+    visitor_runs = 0
+    hometeam_runs = 0
+    print("=" * 100)
+    print(f"{index + 1} " * 50)
+    print("=" * 100)
+    print(f"Visitor runs for inning {index + 1}: {visitor_runs}")
+    print(f"Home Team runs for inning {index + 1}: {hometeam_runs}")
     print('\n')
-    print(f"Inning {inning}")
-    visitor_runs = inning_list[inning].visitors_atbat.team_at_bat()
-    hometeam_runs = inning_list[inning].home_atbat.team_at_bat()
+    print(f"Inning {index + 1}")
+    visitor_runs = inning.visitors_atbat.team_at_bat()
+    hometeam_runs = inning.home_atbat.team_at_bat()
+    print(f"Visitor runs for inning {index + 1}: {visitor_runs}")
+    print(f"Home Team runs for inning {index + 1}: {hometeam_runs}")
+    visitor_runs = 0  # Reset runs after at bat
+    hometeam_runs = 0  # Reset runs after at bat
 
-    print(f"Visitor runs for inning {inning}: {visitor_runs}")
-    print(f"Home Team runs for inning {inning}: {hometeam_runs}")
