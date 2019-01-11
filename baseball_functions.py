@@ -5,7 +5,8 @@
 # - generate pitch result
 
 import random
-import time
+# import time
+
 
 def advance_runner(hit_f, base1_f, base2_f, base3_f, home_plate_f):
     print("before advance:")
@@ -140,12 +141,11 @@ def pitch_result():
 
 
 class TeamAtBat:
-    def __init__(self, team, inning_num):
+    def __init__(self, team):
         self.runs = 0
         self.outs = 0
         self.walks = 0
         self.team = team
-        self.inning_num = inning_num
 
     def team_at_bat(self):
         while self.outs < 3:
@@ -207,35 +207,36 @@ class TeamAtBat:
         # time.sleep(2)
 
 
-class Inning(TeamAtBat):
-    def __init__(self):
+class Inning:
+    def __init__(self, inning_num):
+        self.inning_num = inning_num
         self.visiting_team_runs = 0
         self.home_team_runs = 0
-
-    visitors_atbat = TeamAtBat(team='Visitors', inning_num=0)
-    home_atbat = TeamAtBat(team='Hometeam', inning_num=0)
+        # Create other class instances from the __init__() function!
+        self.visitors_atbat = TeamAtBat(team='Visitors')
+        self.home_atbat = TeamAtBat(team='Hometeam')
 
 
 # Create a total of nine Inning() instances
-inning_list = [Inning() for i in range(9)]
+inning_list = [Inning(inning_num=i) for i in range(1, 10)]
 
 print(inning_list, '\n')
 
 
-for index, inning in enumerate(inning_list):
+for inning in inning_list:
     visitor_runs = 0
     hometeam_runs = 0
     print("=" * 100)
-    print(f"{index + 1} " * 50)
+    print(f"{inning.inning_num} " * 50)
     print("=" * 100)
-    print(f"Visitor runs for inning {inning}: {visitor_runs}")
-    print(f"Home Team runs for inning {inning}: {hometeam_runs}")
+    print(f"Visitor runs for inning {inning.inning_num}: {visitor_runs}")
+    print(f"Home Team runs for inning {inning.inning_num}: {hometeam_runs}")
     print('\n')
-    print(f"Inning {index + 1}")
+    print(f"Inning {inning.inning_num}")
     visitor_runs = inning.visitors_atbat.team_at_bat()
     hometeam_runs = inning.home_atbat.team_at_bat()
-    print(f"Visitor runs for inning {index + 1}: {visitor_runs}")
-    print(f"Home Team runs for inning {index + 1}: {hometeam_runs}")
-    visitor_runs = 0  # Reset runs after at bat
-    hometeam_runs = 0  # Reset runs after at bat
+    print(f"Visitor runs for inning {inning.inning_num}: {visitor_runs}")
+    print(f"Home Team runs for inning {inning.inning_num}: {hometeam_runs}")
+    # visitor_runs = 0  # Reset runs after at bat
+    # hometeam_runs = 0  # Reset runs after at bat
 
